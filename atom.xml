@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-04-13T08:15:03.338Z</updated>
+    <updated>2022-04-14T14:24:37.767Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
@@ -11,9 +11,9 @@
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
     <entry>
-        <title type="html"><![CDATA[First paper]]></title>
-        <id>https://marknft.github.io/post/first-paper/</id>
-        <link href="https://marknft.github.io/post/first-paper/">
+        <title type="html"><![CDATA[GitHub Pages绑定自定义域名]]></title>
+        <id>https://marknft.github.io/post/GitHub pages with my Domain/</id>
+        <link href="https://marknft.github.io/post/GitHub pages with my Domain/">
         </link>
         <updated>2022-04-13T03:31:03.000Z</updated>
     </entry>
