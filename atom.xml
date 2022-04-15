@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-04-15T03:09:36.125Z</updated>
+    <updated>2022-04-15T03:11:25.485Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
@@ -15,13 +15,7 @@
         <link href="https://marknft.github.io/post/Domain/">
         </link>
         <updated>2022-04-13T03:31:03.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>这里是记录学习分享的内容，不定时发布。</p>
-</blockquote>
-<p><strong>封面图</strong><br>
-<img src="https://marknft.github.io/post-images/1649949352534.jpg" alt="" loading="lazy"></p>
-<hr>
-<h2 id="正文">正文</h2>
+        <content type="html"><![CDATA[<h2 id="正文">正文</h2>
 <ul>
 <li>GitHub Pages可以配置个人网站，省去数据库管理和域名等问题，但网址冗长不易记忆且不够炫酷👀</li>
 <li>本文介绍内容，基于GitHub Pages构建你的个性化域名网站🌈</li>
@@ -51,6 +45,11 @@ My account--&gt;Manage My Domains--&gt;在对应域名后点击蓝色球体(如�
 </blockquote>
 <h2 id="恭喜你已完成所有步骤不过您需要等待1-24小时你的域名才能生效">恭喜你已完成所有步骤，不过您需要等待1-24小时，你的域名才能生效</h2>
 <p>如果您有任何问题请留言，可以到其他页面找下我的联系方式~</p>
+<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="https://marknft.github.io/post-images/1649949352534.jpg" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
