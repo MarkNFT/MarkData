@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-04-14T15:21:22.740Z</updated>
+    <updated>2022-04-15T03:09:36.125Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
@@ -11,37 +11,44 @@
     <rights>All rights reserved 2022, Mark World</rights>
     <entry>
         <title type="html"><![CDATA[GitHub Pages绑定自定义域名]]></title>
-        <id>https://marknft.github.io/post/GitHub pages with my Domain/</id>
-        <link href="https://marknft.github.io/post/GitHub pages with my Domain/">
+        <id>https://marknft.github.io/post/Domain/</id>
+        <link href="https://marknft.github.io/post/Domain/">
         </link>
         <updated>2022-04-13T03:31:03.000Z</updated>
-        <summary type="html"><![CDATA[<p>这里是记录学习总结的内容，不定时发布。</p>
+        <content type="html"><![CDATA[<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
 <p><strong>封面图</strong><br>
 <img src="https://marknft.github.io/post-images/1649949352534.jpg" alt="" loading="lazy"></p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这里是记录学习总结的内容，不定时发布。</p>
-<p><strong>封面图</strong><br>
-<img src="https://marknft.github.io/post-images/1649949352534.jpg" alt="" loading="lazy"></p>
-<!-- more -->
-<p>GitHub Pages可以配置网站，省去数据库管理域名备案等问题，但网址冗长不易记忆且不够炫酷👀<br>
-本文介绍内容，基于GitHub Pages构建你的个性化域名网站🌈</p>
+<hr>
+<h2 id="正文">正文</h2>
+<ul>
+<li>GitHub Pages可以配置个人网站，省去数据库管理和域名等问题，但网址冗长不易记忆且不够炫酷👀</li>
+<li>本文介绍内容，基于GitHub Pages构建你的个性化域名网站🌈</li>
+</ul>
 <h3 id="1购买个人域名1美刀起步">1.购买个人域名，1美刀起步</h3>
-<p>https://www.namesilo.com/<br>
-输入你喜欢的域名关键词并SEARCH(搜索)，点击Show Advanced Search有更多的域名后缀<br>
+<blockquote>
+<p><a href="https://www.namesilo.com/">注册登录Namesilo</a>输入你喜欢的域名关键词并SEARCH(搜索)，点击Show Advanced Search有更多的域名后缀<br>
+<img src="https://marknft.github.io/post-images/1649990473174.jpg" alt="" loading="lazy"><br>
 <img src="https://marknft.github.io/post-images/1649949210985.jpg" alt="" loading="lazy"><br>
-目前都在做特价(一年特价，后面原价续费)，考虑到后期续费，我选择的是top后缀域名<br>
-目前还有特价码<em>savingone</em>(节省1美元)，如果失效请自行百度</p>
+网站常年有活动特价(仅限一年特价，后面原价续费)，考虑到后期便宜，我选择的是top后缀域名<br>
+目前有特价码<em>savingone</em>(节省1美元)，如果失效请自行百度</p>
+</blockquote>
 <h3 id="2确认github仓库后台ip">2.确认GitHub仓库后台IP</h3>
+<blockquote>
 <p>进入你的GitHub仓库Settings--&gt;Pages(请自行开启)--&gt;Custom domain--&gt;输入购买的域名并Save--&gt;Learn more<br>
 <img src="https://marknft.github.io/post-images/1649943905040.jpg" alt="" loading="lazy"><br>
 右上角搜索&quot;配置 apex 域&quot;并定位至A记录IP处备用<br>
 <img src="https://marknft.github.io/post-images/1649944225359.jpg" alt="" loading="lazy"></p>
+</blockquote>
 <h3 id="3github-ip与绑定namsile域名绑定">3.Github IP与绑定Namsile域名绑定</h3>
-<p>在Namesilo官网进行以下操作<br>
+<blockquote>
+<p><a href="https://www.namesilo.com/">登录Namesilo</a>配置IP<br>
 My account--&gt;Manage My Domains--&gt;在对应域名后点击蓝色球体(如图)<br>
 <img src="https://marknft.github.io/post-images/1649944799515.jpg" alt="" loading="lazy"><br>
 按步骤1清空目前所有IP，重复2-3-4步骤，把GitHub的四个IP添加进入<br>
 <img src="https://marknft.github.io/post-images/1649945251915.jpg" alt="" loading="lazy"></p>
+</blockquote>
 <h2 id="恭喜你已完成所有步骤不过您需要等待1-24小时你的域名才能生效">恭喜你已完成所有步骤，不过您需要等待1-24小时，你的域名才能生效</h2>
 <p>如果您有任何问题请留言，可以到其他页面找下我的联系方式~</p>
 ]]></content>
