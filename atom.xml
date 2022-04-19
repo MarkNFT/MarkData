@@ -2,13 +2,64 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-04-18T15:24:53.038Z</updated>
+    <updated>2022-04-19T04:12:20.379Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
     <logo>https://marknft.github.io/images/avatar.png</logo>
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
+    <entry>
+        <title type="html"><![CDATA[安装Ubuntu 18.04和Nodejs truffle记录]]></title>
+        <id>https://marknft.github.io/post/UbuntuAndVM/</id>
+        <link href="https://marknft.github.io/post/UbuntuAndVM/">
+        </link>
+        <updated>2022-04-19T03:08:20.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>背景：笔者使用win10，因区块链智能合约需求，需安装Ubuntu系统等
+</code></pre>
+<h2 id="正文">正文</h2>
+<p>下面列举了三种方法，均在window系统下操作，请各位看官按需使用</p>
+<h3 id="1-window商店安装">1. <a href="https://blog.csdn.net/qq_43543789/article/details/104185906">Window商店安装</a></h3>
+<ul>
+<li>但需求使用图形化界面，上面的安装方法不合适！如果可以读者可以转成图形化界面，请留言学习</li>
+</ul>
+<h3 id="2-u盘安装">2. <a href="https://blog.csdn.net/baidu_36602427/article/details/86548203">U盘安装</a></h3>
+<ul>
+<li>以前使用过U盘制作启动盘，安装系统的童鞋可能比较熟悉，但是成本较高</li>
+</ul>
+<h3 id="3-虚拟机vmware安装ubuntu-笔者采用的方式">3. <a href="https://www.vmware.com/cn/products/workstation-pro.html">虚拟机VMware</a>安装Ubuntu---笔者采用的方式</h3>
+<ul>
+<li>具体步骤参考<a href="https://www.bilibili.com/read/cv14163307">这篇文章</a></li>
+</ul>
+<hr>
+<h2 id="但是安装一些库的时候也遇到了一些问题">但是安装一些库的时候也遇到了一些问题</h2>
+<ul>
+<li>
+<p>使用下面的方法那幢nodejs版本低<br>
+<code>sudo apt install nodejs</code><br>
+<code>//此方式安装显示Nodejs v8.10.0</code></p>
+</li>
+<li>
+<p>解决方式：安装稳定版本<br>
+<code>sudo apt-get install npm</code><br>
+<code>sudo npm insatll -g n</code><br>
+<code>sudo n stable</code><br>
+<code>//安装nodejs稳定版本 V16.14.2</code></p>
+</li>
+<li>
+<p>安装truffle一直报错，在最前面加上sudo授权就解决了<br>
+<code>sudo npm install -g truffle</code></p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="https://marknft.github.io/post-images/1650341100125.png" alt="" loading="lazy"><br>
+(完)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[小镇做题家出身，可能会有哪些思想糟粕？]]></title>
         <id>https://marknft.github.io/post/countrymind/</id>
