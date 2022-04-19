@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-04-19T04:42:57.914Z</updated>
+    <updated>2022-04-19T04:47:06.110Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
@@ -55,6 +55,10 @@
 <li>
 <p>安装truffle一直报错，在最前面加上sudo授权就解决了<br>
 <code>sudo npm install -g truffle</code></p>
+</li>
+<li>
+<p>打开图形化界面<br>
+<code>nautilus</code></p>
 </li>
 </ul>
 <hr>
