@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://marknft.github.io</id>
+    <id>http://localhost:4000</id>
     <title>Mark World</title>
-    <updated>2022-04-24T05:11:16.124Z</updated>
+    <updated>2022-04-24T11:48:17.549Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://marknft.github.io"/>
-    <link rel="self" href="https://marknft.github.io/atom.xml"/>
-    <logo>https://marknft.github.io/images/avatar.png</logo>
-    <icon>https://marknft.github.io/favicon.ico</icon>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
     <entry>
+        <title type="html"><![CDATA[读书笔记① | 《态度》作者吴军 | 启明家书、个人成长]]></title>
+        <id>http://localhost:4000/post/Taidu-book/</id>
+        <link href="http://localhost:4000/post/Taidu-book/">
+        </link>
+        <updated>2022-04-24T10:30:23.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>《态度》是吴军老师给上大学、高中的女儿们的家属，针对年轻人在成长过程中遇到的有效学习、处理人际关系、理解并赚取财富等具体问题，以及如何洞察世界、人生等哲学问题，给出了指导和建议 。
+</code></pre>
+<h2 id="正文">正文</h2>
+<p>文中对人生、职场、爱情、金钱都有指导，完全称得上一部启明家书。<br>
+去哦已经是第二次阅读《态度》，依然对当前的困境有很大帮助！</p>
+<p>经过一个星期，我整理了思维导图，供以后再次学习!<br>
+希望对你也有所帮助,但还是希望你自己再进行完整阅读！</p>
+<blockquote>
+<p>⽗⺟与⼦⼥之间的交流,不仅是必要的,⽽且是必需的，它是⼈类进步的根本。⽗⺟将⾃⼰的学识和 ​⽣活经验传递给后代，这让⼏乎每⼀代⼈都可以 ​轻松地超越上⼀代⼈。如果我们不能从前辈那⾥ ​学习有益的经验，⽽是凡事都靠⾃⼰试</p>
+</blockquote>
+<p>笔者摘录关于职场的指导：</p>
+<ol>
+<li>
+<p>有效沟通：确认对方明白了你的意思，然后确认对方是答应你了还是拒绝你了，无论什么结果，你总要有结论，到此，通信才算结束。我们要随时牢记，通信要以确信对方真正接收到了你传达的信息和信息的含义，才算结束</p>
+</li>
+<li>
+<p>与人沟通，切忌罗嗦。很多人认为，自己讲的越多，对方接收的信息也越多。其实，如果废话太多，对方根本搞不清你要说什么，沟通的结果为零。更何况在通信中，多少会有点噪声，话多了难免词不达意，让人误解，这就是噪声。任何好的沟通需要清楚对方是谁，用什么样的一两句话能够让对方理解你的意图。</p>
+</li>
+<li>
+<p>在工业界要主动工作，这个主动不完全是提前完成任务之后找领导要新任务，他有更深刻的内涵。所谓主动，就是指你有自己的想法和规划，并且随时和他进行沟通，得到他甚至其他同事的反馈。尽管大部分公司都会给实习生指定老师布置任务，甚至在生活上给你们关心，但是事实上，公司里的工程师或者研究员通常不会像大学教授那样给你布置作业，并且给你做细节指导，因为他们通常会忙于自己的工作，因此，你工作的主动性就显得很重要</p>
+</li>
+<li>
+<p>很多人对人对事的判断完全根据自己的喜好符合自己喜好的人，无论他们做什么都觉得好；不符合自己喜好的人，无论他们做什么都要挑毛病。这种待人接物的态度不好</p>
+</li>
+</ol>
+<p>获取完整高清版思维导图：<br>
+到公众号<strong> 张知柳 </strong>回复<strong> 态度 </strong></p>
+<h2 id=""><img src="http://localhost:4000/post-images/1650800520563.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1650800530284.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1650800536998.png" alt="" loading="lazy"></h2>
+<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="http://localhost:4000/post-images/1650800417067.jpg" alt="" loading="lazy"><br>
+(完)</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[安装Ubuntu 18.04和Nodejs truffle记录]]></title>
-        <id>https://marknft.github.io/post/UbuntuAndVM/</id>
-        <link href="https://marknft.github.io/post/UbuntuAndVM/">
+        <id>http://localhost:4000/post/UbuntuAndVM/</id>
+        <link href="http://localhost:4000/post/UbuntuAndVM/">
         </link>
         <updated>2022-04-19T03:08:20.000Z</updated>
         <summary type="html"><![CDATA[<pre><code>背景：笔者使用win10，因区块链智能合约需求，需安装Ubuntu系统等
@@ -66,14 +110,14 @@
 <p>这里是记录学习分享的内容，不定时发布。</p>
 </blockquote>
 <p><strong>封面图</strong><br>
-<img src="https://marknft.github.io/post-images/1650341100125.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1650341100125.png" alt="" loading="lazy"><br>
 (完)</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[小镇做题家出身，可能会有哪些思想糟粕？]]></title>
-        <id>https://marknft.github.io/post/countrymind/</id>
-        <link href="https://marknft.github.io/post/countrymind/">
+        <id>http://localhost:4000/post/countrymind/</id>
+        <link href="http://localhost:4000/post/countrymind/">
         </link>
         <updated>2022-04-18T06:48:49.000Z</updated>
         <summary type="html"><![CDATA[<pre><code>“小镇做题家”，网络词汇，指“出身小城镇，埋头苦读，擅长应试，但缺乏一定视野和资源的青年学子”
@@ -101,14 +145,14 @@
 <p>这里是记录学习分享的内容，不定时发布。</p>
 </blockquote>
 <p><strong>封面图</strong><br>
-<img src="https://marknft.github.io/post-images/1650265457417.jpg" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1650265457417.jpg" alt="" loading="lazy"></p>
 <p>(完)</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[GitHub Pages绑定自定义域名]]></title>
-        <id>https://marknft.github.io/post/Domain/</id>
-        <link href="https://marknft.github.io/post/Domain/">
+        <id>http://localhost:4000/post/Domain/</id>
+        <link href="http://localhost:4000/post/Domain/">
         </link>
         <updated>2022-04-13T03:31:03.000Z</updated>
         <summary type="html"><![CDATA[<pre><code>GitHub Pages可以配置个人网站，省去数据库管理和域名等问题，但网址冗长不易记忆且不够炫酷👀
@@ -122,25 +166,25 @@
 <h3 id="1购买个人域名1美刀起步">1.购买个人域名，1美刀起步</h3>
 <ul>
 <li><a href="https://www.namesilo.com/">注册登录Namesilo</a>输入你喜欢的域名关键词并SEARCH(搜索)，点击Show Advanced Search有更多的域名后缀<br>
-<img src="https://marknft.github.io/post-images/1649990473174.jpg" alt="" loading="lazy"><br>
-<img src="https://marknft.github.io/post-images/1649949210985.jpg" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1649990473174.jpg" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1649949210985.jpg" alt="" loading="lazy"></li>
 <li>网站常年有活动特价(仅限一年特价，后面原价续费)，考虑到后期便宜，我选择的是top后缀域名</li>
 <li>目前有特价码<em>savingone</em>(节省1美元)，如果失效请自行百度</li>
 </ul>
 <h3 id="2确认github仓库后台ip">2.确认GitHub仓库后台IP</h3>
 <ul>
 <li>进入你的GitHub仓库Settings--&gt;Pages(请自行开启)--&gt;Custom domain--&gt;输入购买的域名并Save--&gt;Learn more<br>
-<img src="https://marknft.github.io/post-images/1649943905040.jpg" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1649943905040.jpg" alt="" loading="lazy"></li>
 <li>右上角搜索&quot;配置 apex 域&quot;并定位至A记录IP处备用<br>
-<img src="https://marknft.github.io/post-images/1649944225359.jpg" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1649944225359.jpg" alt="" loading="lazy"></li>
 </ul>
 <h3 id="3github-ip与绑定namsile域名绑定">3.Github IP与绑定Namsile域名绑定</h3>
 <ul>
 <li><a href="https://www.namesilo.com/">登录Namesilo</a>配置IP<br>
 My account--&gt;Manage My Domains--&gt;在对应域名后点击蓝色球体(如图)<br>
-<img src="https://marknft.github.io/post-images/1649944799515.jpg" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1649944799515.jpg" alt="" loading="lazy"></li>
 <li>按步骤1清空目前所有IP，重复2-3-4步骤，把GitHub的四个IP添加进入<br>
-<img src="https://marknft.github.io/post-images/1649945251915.jpg" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1649945251915.jpg" alt="" loading="lazy"></li>
 </ul>
 <h2 id="恭喜你已完成所有步骤不过您需要等待1-24小时你的域名才能生效">恭喜你已完成所有步骤，不过您需要等待1-24小时，你的域名才能生效</h2>
 <p>如果您有任何问题请留言，可以到其他页面找下我的联系方式~</p>
@@ -149,7 +193,7 @@ My account--&gt;Manage My Domains--&gt;在对应域名后点击蓝色球体(如�
 <p>这里是记录学习分享的内容，不定时发布。</p>
 </blockquote>
 <p><strong>封面图</strong><br>
-<img src="https://marknft.github.io/post-images/1649949352534.jpg" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1649949352534.jpg" alt="" loading="lazy"></p>
 <p>(完)</p>
 ]]></content>
     </entry>
