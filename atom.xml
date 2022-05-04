@@ -2,13 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-04-25T02:54:06.320Z</updated>
+    <updated>2022-05-04T08:15:39.006Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
     <logo>https://marknft.github.io/images/avatar.png</logo>
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
+    <entry>
+        <title type="html"><![CDATA[区块链学习笔记① | yueying007]]></title>
+        <id>https://marknft.github.io/post/blockchain-007/</id>
+        <link href="https://marknft.github.io/post/blockchain-007/">
+        </link>
+        <updated>2022-05-04T07:49:30.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code>这是一位在区块链的科学家发表的套利文章笔记。
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code>这是一位在区块链的科学家发表的套利文章笔记。
+</code></pre>
+<!-- more -->
+<p>他在第一篇文章就说明了写作意图，分享自身财富自由的技术。</p>
+<p>但是由于某些未知因素，已经停更了。</p>
+<p>我在某平台评论过他的动态，直接就被拉黑了。</p>
+<p>误伤友军，后面也取消了拉黑~</p>
+<p>不知道是不是我伤害了大佬的心，后面就没再更新过！</p>
+<p>强行加戏，哈哈~</p>
+<hr>
+<ul>
+<li><font color=#008>以下是我的笔记，方便回看</font></li>
+</ul>
+<blockquote>
+<p><font size=5>获取高清完整版：微信公众号<strong> 张知柳 </strong>回复<strong> 007</strong></font></p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://marknft.github.io/post-images/1651651132246.png" alt="" loading="lazy"></figure>
+<p>截至到现在的文章，我认为使用Ubuntu不如用Remix编辑器，Remix集成环境直接编写合约！</p>
+<h2 id="原文地址点我"><a href="https://medium.com/@yueying007">原文地址点我</a></h2>
+<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="https://marknft.github.io/post-images/1651651243017.jpg" alt="" loading="lazy"><br>
+<a href="https://www.youtube.com/channel/UCS8BqjUmQbiNnr0GgqUiiBw">欢迎订阅我的Youtube频道</a></p>
+<p>(完)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[读书笔记① | 《态度》作者吴军 | 启明家书个人成长]]></title>
         <id>https://marknft.github.io/post/Book_taidu/</id>
