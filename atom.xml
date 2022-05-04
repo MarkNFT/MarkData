@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-05-04T08:39:45.581Z</updated>
+    <updated>2022-05-04T08:47:38.129Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
@@ -10,7 +10,7 @@
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
     <entry>
-        <title type="html"><![CDATA[区块链学习笔记① | yueying007]]></title>
+        <title type="html"><![CDATA[区块链学习笔记① | 主题套利007]]></title>
         <id>https://marknft.github.io/post/blockchain-007/</id>
         <link href="https://marknft.github.io/post/blockchain-007/">
         </link>
