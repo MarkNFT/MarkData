@@ -2,13 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-05-10T05:43:31.564Z</updated>
+    <updated>2022-05-14T10:01:31.384Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
     <logo>https://marknft.github.io/images/avatar.png</logo>
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
+    <entry>
+        <title type="html"><![CDATA[Solidity基础入门笔记①]]></title>
+        <id>https://marknft.github.io/post/Solidity_Basis1/</id>
+        <link href="https://marknft.github.io/post/Solidity_Basis1/">
+        </link>
+        <updated>2022-05-14T09:26:30.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code>Solidity是目前区块链智能合约最流行的语言！智能合约即运行在区块链上的一段代码！
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code>Solidity是目前区块链智能合约最流行的语言！智能合约即运行在区块链上的一段代码！
+</code></pre>
+<!-- more -->
+<h2 id="正文">正文</h2>
+<p>Solidity语言风格和Javascript、Python很像，即使没有开发经验的同学入门也不难！</p>
+<p>但是由于上链就具有不可修改性，低级错误可能导致几个亿的亏损！</p>
+<p>这确实发生过，当然未来可能还会！</p>
+<p>无论你是在区块链的任何岗位，建议你都了解下Solidity！</p>
+<p>Code is Law！！！</p>
+<hr>
+<p>我最近找了许多solidity的入门资料，记录了其基础知识，希望对各位有用！</p>
+<p>文章底部会附上优秀的Solidity入门系列文章、视频！</p>
+<p><img src="https://marknft.github.io/post-images/1652521512574.jpg" alt="" loading="lazy"><br>
+<font size=5>获取高清版，请到公众号 张知柳 回复 Solidity入门</font ></p>
+<ul>
+<li><a href="https://github.com/AmazingAng/WTFSolidity">Solidity入门系列文章</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLV16oVzL15MS-Zw8a3eEOADwbHhm8GrMp">Solidity入门系列视频_中文</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLO5VPQH6OWdVQwpQfw9rZ67O6Pjfo6q-p">Solidity入门系列视频_英文</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>这里是记录学习分享的内容，<a href="https://www.youtube.com/channel/UCS8BqjUmQbiNnr0GgqUiiBw">订阅我的Youtube频道，资料更新更及时</a></p>
+</blockquote>
+<p><strong>封面图</strong><br>
+<img src="https://marknft.github.io/post-images/1652520525056.jpg" alt="" loading="lazy"></p>
+<p>(完)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[智能合约Solidity安全②-数字溢出攻击Overflow]]></title>
         <id>https://marknft.github.io/post/SoliditySecurity-2/</id>
@@ -176,7 +213,7 @@ require (msg.sender == tx.origin, &quot;not user address&quot; );</li>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[区块链学习笔记① | 主题套利007]]></title>
+        <title type="html"><![CDATA[区块链实例笔记① | 主题套利007]]></title>
         <id>https://marknft.github.io/post/blockchain-007/</id>
         <link href="https://marknft.github.io/post/blockchain-007/">
         </link>
