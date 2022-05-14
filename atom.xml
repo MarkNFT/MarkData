@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-05-14T10:05:21.867Z</updated>
+    <updated>2022-05-14T10:31:29.767Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
@@ -213,7 +213,7 @@ require (msg.sender == tx.origin, &quot;not user address&quot; );</li>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[区块链实例笔记① | 主题套利007]]></title>
+        <title type="html"><![CDATA[区块链实例笔记① | 主题套利]]></title>
         <id>https://marknft.github.io/post/blockchain-007/</id>
         <link href="https://marknft.github.io/post/blockchain-007/">
         </link>
@@ -242,9 +242,10 @@ require (msg.sender == tx.origin, &quot;not user address&quot; );</li>
 </blockquote>
 <figure data-type="image" tabindex="1"><img src="https://marknft.github.io/post-images/1651651132246.png" alt="" loading="lazy"></figure>
 <p>截至到现在的文章，我认为使用Ubuntu不如用Remix编辑器，Remix集成环境直接编写合约！</p>
-<h2 id="如何安装ubuntu"><a href="https://marknft.top/post/UbuntuAndVM/">如何安装Ubuntu</a><br>
-<a href="https://medium.com/@yueying007">科学家原文地址点我</a><br>
-<a href="https://ethereum.org/zh/developers/">智能合约官网介绍</a></h2>
+<pre><code>[如何安装Ubuntu](https://marknft.top/post/UbuntuAndVM/)
+[智能合约官网介绍](https://ethereum.org/zh/developers/)
+</code></pre>
+<hr>
 <blockquote>
 <p>这里是记录学习分享的内容，不定时发布。</p>
 </blockquote>
