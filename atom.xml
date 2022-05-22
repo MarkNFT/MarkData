@@ -2,13 +2,70 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marknft.github.io</id>
     <title>Mark World</title>
-    <updated>2022-05-15T11:04:19.541Z</updated>
+    <updated>2022-05-22T10:22:17.390Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marknft.github.io"/>
     <link rel="self" href="https://marknft.github.io/atom.xml"/>
     <logo>https://marknft.github.io/images/avatar.png</logo>
     <icon>https://marknft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Mark World</rights>
+    <entry>
+        <title type="html"><![CDATA[小程序笔记⑤ | 区块链学习卡片类]]></title>
+        <id>https://marknft.github.io/post/minigrogram5/</id>
+        <link href="https://marknft.github.io/post/minigrogram5/">
+        </link>
+        <updated>2022-05-22T10:16:10.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="前言">前言</h2>
+<p>前段时间在研究区块链，但是术语和英语简称太多，所以做了卡片类便签小程序，类似市面的英语单词卡片！</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2>
+<p>前段时间在研究区块链，但是术语和英语简称太多，所以做了卡片类便签小程序，类似市面的英语单词卡片！</p>
+<!-- more -->
+<h2 id="正文">正文</h2>
+<h3 id="小程序描述">小程序描述</h3>
+<h4 id="页面1__首页">页面1__首页</h4>
+<p>首页展示的区块链术语简称、中文释义和运用实例，三个展示项目均来自云数据，术语更新不要通过小程序审核！</p>
+<h4 id="页面2__搜索">页面2__搜索</h4>
+<p>展示数据库所有的术语简称，点击术语或搜索关键词，均可跳转至此术语中文释义和运用实例首页页面！<br>
+搜索数据库中不存在的术语，用户可订阅更新提醒！</p>
+<h4 id="页面3__生成图片">页面3__生成图片</h4>
+<p>点击首页分享按钮，生成当前页面术语海报！</p>
+<h3 id="问题与方案">问题与方案</h3>
+<h4 id="1-主体使用swiper展示但是不支持动态高度字数多就无法全部显示">1. 主体使用Swiper展示，但是不支持动态高度，字数多就无法全部显示!</h4>
+<p>答：确认文字最多的所需swiper长度并设定，然后设定flex动态布局，也不会底部留白太多！</p>
+<h4 id="2-在搜索页面中搜索页面的术语与首页一一对应点击术语或搜索会跳转对应详情页">2. 在搜索页面中，搜索页面的术语与首页一一对应，点击术语或搜索会跳转对应详情页!</h4>
+<p>答：简单来说就是非Tabbar页面向Tabbar页面传参方案:</p>
+<p>方案1. wx.navigateTo支持传参但不支持跳转Tabbar页面， wx.switchTab 支持跳转Tabbar 页面，但是不支持传参！不符合要求！</p>
+<p>方案2. 使用全局函数 globalData，本次采取的方案！</p>
+<p>方案3. 使用wx.setStorageSync存储在本地再读取！</p>
+<h4 id="3-默认搜索是区分大小写的且需要删除空格">3. 默认搜索是区分大小写的，且需要删除空格!</h4>
+<p>答：之前没有用到这些功能，多亏了前人种树~</p>
+<p>不区分大小写 Database.RegExp<br>
+删除全部空格 replaceAll(“ “,””)</p>
+<h4 id="4-支持用户订阅消息">4. 支持用户订阅消息!</h4>
+<p>答：这是第一次在小程序添加此功能，操作步骤如下:</p>
+<ol>
+<li>
+<p>使用 wx.requestSubscribeMessage 绑定模板ID，然后把用户 openid上传至数据库!</p>
+</li>
+<li>
+<p>通过云函数cloud.openapi.subscribeMessage.send 下发提醒!</p>
+</li>
+<li>
+<p>可以使用事件触发或者定时触发器trigger!</p>
+</li>
+</ol>
+<h4 id="插曲">插曲</h4>
+<p>开始计划是用户上传关键词到数据库，关键词更新后给用户发送提醒。</p>
+<p>但是用户如果选择在这里订阅提醒，为啥不去直接搜索更快，遂否决了这个方案！</p>
+<h3 id="5-生成分享图片">5. 生成分享图片</h3>
+<p>之前一直使用的插件，但是已经失效(可能是支持Canvas2D )，小程序关于Canvas 2D的官方文档又不全面，遇到的坑还是挺多的，建议还是用插件快捷生成海报！<br>
+因为此页面不是 Tabbar，使用的是 wx.navigateTo 传输图片所需数据!<br>
+赶紧体验一下，微信扫码或者搜索 NFT黑话<br>
+<img src="https://marknft.github.io/post-images/1653214714362.jpg" alt="" loading="lazy"></p>
+<p>(完)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何购买NFT？详细介绍充值加密币]]></title>
         <id>https://marknft.github.io/post/Blockchain_bank/</id>
@@ -102,6 +159,7 @@ https://www.okx.com/join/17476159
 <p>(完)</p>
 <p>如果你对任何交易不清楚时，可以打开下面网站输入钱包地址，以太网链上任何交易记录都可以找到！</p>
 <p>https://Etherscan.io</p>
+<p>(完)</p>
 ]]></content>
     </entry>
     <entry>
